@@ -1,8 +1,11 @@
-import { render, screen } from '@testing-library/react';
-import App from './App';
+import { render, screen } from "@testing-library/react";
 
-test('renders learn react link', () => {
-  render(<App />);
-  const linkElement = screen.getByText(/learn react/i);
-  expect(linkElement).toBeInTheDocument();
+import App from "./App";
+
+describe("App component tests", () => {
+  test("This test should be check if the App component show up a text message", () => {
+    render(<App />);
+
+    expect(screen.getByText("Hello world!")).toBeVisible();
+  });
 });
