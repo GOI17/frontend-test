@@ -3,9 +3,13 @@ import { render, screen } from "@testing-library/react";
 import App from "./App";
 
 describe("App component tests", () => {
-  test("This test should be check if the App component show up a text message", () => {
+  test("This test should be check if the App has the header component", async () => {
     render(<App />);
 
-    expect(screen.getByText("Hello world!")).toBeVisible();
+    const header = await screen.findByTestId("header");
+    const title = await screen.findByTestId("title");
+
+    expect(header).toBeVisible();
+    expect(title).toBeVisible();
   });
 });
