@@ -1,4 +1,4 @@
-const { default: http } = require("libs/http");
+import http from "libs/http";
 
 const url = "price-evolution-chart/";
 
