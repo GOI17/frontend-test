@@ -1,0 +1,59 @@
+.ComparativeAnalysisTable {
+  border-collapse: collapse;
+}
+
+.ComparativeAnalysisTable .table-header {
+  background: #a6a6a7;
+  height: 71px;
+  text-align: center;
+}
+
+.ComparativeAnalysisTable .table-header tr :first-child {
+  background: #a6a6a7;
+  border-radius: 4px 0 0 0;
+  width: 121px;
+}
+
+.ComparativeAnalysisTable .table-header tr :last-child {
+  background: #a6a6a7;
+  border-radius: 0 4px 0 0;
+}
+
+.ComparativeAnalysisTable .table-header-label {
+  color: #01172c;
+  font-size: 20px;
+  font-weight: 600;
+}
+
+.ComparativeAnalysisTable .product-image {
+  height: 121px;
+  width: 121px;
+}
+
+.ComparativeAnalysisTable .table-body tr {
+  background: #ffffff;
+  border: 1px solid #e9e9e9;
+  box-sizing: border-box;
+  height: 161px;
+}
+
+.ComparativeAnalysisTable .table-body tr:nth-child(2n + 2) {
+  background: #e9e9e9;
+}
+
+.ComparativeAnalysisTable .table-body .table-cell {
+  color: #565657;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 20px;
+  text-align: center;
+  height: 25px;
+}
+
+.ComparativeAnalysisTable .table-body .table-cell .positive-persistence {
+  color: #23b794;
+}
+
+.ComparativeAnalysisTable .table-body .table-cell .negative-persistence {
+  color: #d6215b;
+}

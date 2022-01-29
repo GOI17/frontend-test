@@ -1,0 +1,5 @@
+.SecondSection {
+  display: flex;
+  flex-direction: column;
+  padding: 90px 28px 28px 28px;
+}
