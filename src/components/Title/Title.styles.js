@@ -1,7 +1,7 @@
 const titleStyles = {
   height: 40,
   marginLeft: 28,
-  marginTop: 91,
+  marginTop: 30,
   fontStyle: "normal",
   fontWeight: 600,
   fontSize: 40,
