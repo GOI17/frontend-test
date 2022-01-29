@@ -1,5 +1,7 @@
+import "./PriceEvolution.styles.css";
+
 import PriceEvolutionChart from "components/PriceEvolutionChart";
-import Subtitle from "components/Subtitle/Subtitle";
+import Subtitle from "components/Subtitle";
 
 import useGetPriceEvolution from "hooks/useGetPriceEvolution";
 
@@ -9,11 +11,19 @@ const PriceEvolution = () => {
   const renderErrorMessage = () => <p>{state.error}</p>;
 
   return (
-    <div>
+    <div className="PriceEvolution">
       <Subtitle id="price-evolution" subtitle="Price Evolution" />
-      {state.status.isFetchingData && <p>Fetching data...</p>}
-      {state.status.isFetchingDone && <PriceEvolutionChart data={state.data} />}
-      {state.status.isFetchingFailed && renderErrorMessage()}
+      <div className="card">
+        <div className="card-content">
+          {state.status.isFetchingData && <p>Fetching data...</p>}
+          {state.status.isFetchingDone && (
+            <div className="chart">
+              <PriceEvolutionChart data={state.data} />
+            </div>
+          )}
+          {state.status.isFetchingFailed && renderErrorMessage()}
+        </div>
+      </div>
     </div>
   );
 };

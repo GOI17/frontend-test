@@ -1,0 +1,31 @@
+.PriceEvolution {
+  flex-grow: 2;
+  margin-right: 0.5rem;
+}
+
+.PriceEvolution .card {
+  background-color: #fff;
+  border: 1px solid #e9e9e9;
+}
+
+.PriceEvolution .card:hover {
+  overflow: auto;
+}
+
+.PriceEvolution .card .card-content .chart {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@media (max-width: 960px) {
+  .PriceEvolution
+    .card
+    .card-content
+    .chart
+    .apexcharts-canvas.apexcharts-theme-light
+    svg {
+    max-width: 823px;
+    height: 407px;
+  }
+}

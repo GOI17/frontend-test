@@ -1,5 +1,9 @@
-import { memo, useState } from "react";
+import { memo } from "react";
 import ReactApexChart from "react-apexcharts";
+
+import "./PriceEvolutionChart.styles.css";
+
+import useChart from "hooks/useChart/useChart";
 
 const buildPriceEvolutionSeries = (data) => {
   const skuList = Object.keys(data);
@@ -21,52 +25,27 @@ const buildPriceEvolutionXaxis = (data) => {
   return { categories: formattedList };
 };
 
-const PriceEvolutionChartStyles = {
-  backgroundColor: "white",
-  padding: "2rem 2rem 2rem 3rem",
-};
-
 const PriceEvolutionChart = ({ data }) => {
-  const series = buildPriceEvolutionSeries(data);
-  const xaxis = buildPriceEvolutionXaxis(data);
-  const [chartState] = useState({
+  const { chartState } = useChart({
+    colors: ["#D6215B", "#7530B2", "#FFB448"],
+    id: "price-evolution-chart",
+    series: buildPriceEvolutionSeries(data),
     options: {
-      chart: {
-        animations: {
-          enabled: false,
-        },
-        background: "#fff",
-        dropShadow: {
-          enabled: false,
-        },
-        events: {},
-        zoom: {
-          enabled: false,
-        },
-        id: "price-evolution-chart",
-        toolbar: {
-          show: false,
-        },
+      markers: {
+        size: 0,
       },
-      stroke: {
-        curve: "smooth",
-      },
-      xaxis,
-      colors: ["#D6215B", "#7530B2", "#FFB448"],
     },
-    series,
+    xaxis: buildPriceEvolutionXaxis(data),
   });
 
   return (
-    <div style={PriceEvolutionChartStyles}>
-      <ReactApexChart
-        height={407}
-        options={chartState.options}
-        series={chartState.series}
-        type="line"
-        width={868}
-      />
-    </div>
+    <ReactApexChart
+      options={chartState.options}
+      series={chartState.series}
+      type="line"
+      height={407}
+      width={868}
+    />
   );
 };
 
