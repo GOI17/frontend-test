@@ -1,6 +1,6 @@
 const { useState } = require("react");
 
-const useChart = ({ colors, id, labels, options, series, xaxis }) => {
+const useChart = (chartOptions) => {
   const [chartState] = useState({
     options: {
       chart: {
@@ -15,7 +15,6 @@ const useChart = ({ colors, id, labels, options, series, xaxis }) => {
         zoom: {
           enabled: false,
         },
-        id,
         toolbar: {
           show: false,
         },
@@ -23,12 +22,8 @@ const useChart = ({ colors, id, labels, options, series, xaxis }) => {
       stroke: {
         curve: "smooth",
       },
-      xaxis,
-      colors,
-      ...options,
     },
-    series,
-    labels,
+    ...chartOptions,
   });
 
   return { chartState };

@@ -27,15 +27,26 @@ const buildPriceEvolutionXaxis = (data) => {
 
 const PriceEvolutionChart = ({ data }) => {
   const { chartState } = useChart({
-    colors: ["#D6215B", "#7530B2", "#FFB448"],
-    id: "price-evolution-chart",
-    series: buildPriceEvolutionSeries(data),
     options: {
+      colors: ["#D6215B", "#7530B2", "#FFB448"],
+      chart: {
+        zoom: {
+          enabled: false,
+        },
+        toolbar: {
+          show: false,
+        },
+      },
+      stroke: {
+        curve: "smooth",
+      },
+      id: "price-evolution-chart",
       markers: {
         size: 0,
       },
+      xaxis: buildPriceEvolutionXaxis(data),
     },
-    xaxis: buildPriceEvolutionXaxis(data),
+    series: buildPriceEvolutionSeries(data),
   });
 
   return (

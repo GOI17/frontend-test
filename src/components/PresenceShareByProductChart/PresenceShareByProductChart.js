@@ -15,17 +15,15 @@ const buildPresenceShareByProductLabels = (data) => {
 
 const PresenceShareByProductChart = ({ data }) => {
   const { chartState } = useChart({
-    // colors: ["#D6215B", "#7530B2", "#FFB448"],
-    id: "presence-chart",
     options: {
-      chart: {},
+      colors: ["#D6215B", "#FF7A00", "#7530B2", "#23B794", "#006FFF"],
       dataLabels: {
         enabled: false,
       },
+      id: "presence-chart",
+      labels: buildPresenceShareByProductLabels(data),
     },
     series: buildPresenceShareByProductSeries(data),
-    responsive: [{}],
-    labels: buildPresenceShareByProductLabels(data),
   });
 
   return (
