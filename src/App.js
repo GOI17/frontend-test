@@ -1,13 +1,5 @@
-import FirstSection from "components/FirstSection";
-import Header from "components/Header";
-import Title from "components/Title/Title";
+import Home from "pages/Home";
 
 export default function App() {
-  return (
-    <>
-      <Header />
-      <Title />
-      <FirstSection />
-    </>
-  );
+  return <Home />;
 }
