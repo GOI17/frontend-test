@@ -1,0 +1,12 @@
+.FirstSection {
+  display: flex;
+  padding: 0 28px;
+  height: auto;
+  max-width: 100%;
+}
+
+@media (max-width: 1200px) {
+  .FirstSection {
+    flex-direction: column;
+  }
+}

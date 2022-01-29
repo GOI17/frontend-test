@@ -1,20 +1,15 @@
 import React from "react";
 
-import Subtitle from "components/Subtitle/Subtitle";
-import PriceEvolution from "components/PriceEvolution/PriceEvolution";
+import "./FirstSection.styles.css";
 
-import { firstSectionStyles } from "./FirstSection.styles";
+import PriceEvolution from "components/PriceEvolution";
+import PresenceShareByProduct from "components/PresenceShareByProduct";
 
 const FirstSection = () => {
   return (
-    <section style={firstSectionStyles}>
+    <section className="FirstSection">
       <PriceEvolution />
-      <div>
-        <Subtitle
-          id="presence-share-by-product"
-          subtitle="Presence Share by Product"
-        />
-      </div>
+      <PresenceShareByProduct />
     </section>
   );
 };
